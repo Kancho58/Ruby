@@ -1,10 +1,31 @@
-<h2>Sign up</h2>
+<h2 >Sign up</h2>
+<hr>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :full_name %>:
+    <%= f.text_field :name, autocomplete: "new_name" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :birth_of_date %>:
+    <%= f.date_field :birth_of_date, autocomplete: "new_date" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>:
+    <%= f.text_field :address, autocomplete: "new_address" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %>:
+    <%= f.text_field :phone_number, autocomplete: "new_phone_number" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>:
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -12,12 +33,12 @@
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>:
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>:
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
